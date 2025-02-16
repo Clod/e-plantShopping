@@ -7,6 +7,10 @@ export const CartSlice = createSlice({
     addedToCart: [], // Track items that have been added to cart
   },
   reducers: {
+    clearCart: (state) => {
+      state.items = [];
+      state.addedToCart = [];
+    },
     addItem: (state, action) => {
       const { name, image, cost } = action.payload;
       // Add to addedToCart array if not already present
@@ -36,6 +40,14 @@ export const CartSlice = createSlice({
   },
 });
 
-export const { addItem, removeItem, updateQuantity } = CartSlice.actions;
+export const { addItem, removeItem, updateQuantity, clearCart } = CartSlice.actions;
+
+// Selector to calculate cart total
+export const getCartTotal = (state) => {
+  return state.cart.items.reduce((total, item) => {
+    const cost = parseFloat(item.cost.replace('$', ''));
+    return total + (cost * item.quantity);
+  }, 0);
+};
 
 export default CartSlice.reducer;
