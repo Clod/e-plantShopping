@@ -249,8 +249,11 @@ function ProductList() {
     };
 
     const handleContinueShopping = (e) => {
-        e.preventDefault();
+        console.log("Inside handleContinueShopping")
+        console.log(showCart);
+        // e.preventDefault(); Caller is not a form so no need to prevent default action
         setShowCart(false);
+        console.log(showCart);
     };
 
 
