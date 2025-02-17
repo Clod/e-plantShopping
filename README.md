@@ -4,7 +4,7 @@
 
 This project is a simple e-commerce application for purchasing plants. It's built using React, Redux Toolkit, and CSS. This project is intended for reference and educational purposes only.
 
-<a href="https://clod.github.io/e-plantShopping/" target="_blank">Live Demo</a
+<a href="https://clod.github.io/e-plantShopping/" target="_blank">Live Demo</a>
 
 ## Architecture
 
